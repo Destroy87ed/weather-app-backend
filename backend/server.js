@@ -1,3 +1,31 @@
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+// Swagger options
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Weather App API",
+      version: "1.0.0",
+      description: "API documentation for Weather App Backend",
+    },
+    servers: [
+      {
+        url: process.env.BACKEND_URL,
+      },
+    ],
+  },
+  apis: ["./server.js"], // or the path to your routes files
+};
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+// Swagger UI route
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
