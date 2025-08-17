@@ -1,0 +1,31 @@
+services:
+  # Backend API Service
+  - type: web
+    name: weather-app-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: OPENWEATHER_API_KEY
+        sync: false # Set this manually in Render dashboard
+      - key: YOUTUBE_API_KEY
+        sync: false # Optional - set this manually
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false # Optional - set this manually
+
+  # Frontend Static Site
+  - type: web
+    name: weather-app-frontend
+    env: static
+    buildCommand: npm install && cd frontend && npm install && npx vite build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: weather-app-backend
+          property: host

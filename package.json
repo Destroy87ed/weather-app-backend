@@ -1,0 +1,38 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Professional Weather Dashboard - Full Stack Application",
+  "scripts": {
+    "dev": "npm run install-all && npm run dev:parallel",
+    "dev:parallel": "npx concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "cd backend && npm install && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm run start",
+    "install-all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build": "cd frontend && npm install && npx vite build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "clean": "rm -rf backend/node_modules frontend/node_modules backend/dist frontend/dist"
+  },
+  "keywords": [
+    "weather-app",
+    "react",
+    "express",
+    "nodejs",
+    "full-stack",
+    "api-integration",
+    "openweathermap",
+    "youtube-api",
+    "google-maps",
+    "sqlite",
+    "crud-operations"
+  ],
+  "author": "Bitania Yonas",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
