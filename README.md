@@ -2,18 +2,6 @@
 
 A comprehensive weather application built with React and Express.js featuring real-time weather data, location services, database persistence, and advanced integrations with YouTube and Google Maps.
 
-![Weather App](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
-![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Express%20%7C%20SQLite-blue)
-![APIs](https://img.shields.io/badge/APIs-OpenWeather%20%7C%20YouTube%20%7C%20Google%20Maps-orange)
-
-## 🚀 Quick Start
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/weather-app.git
-   cd weather-app
-   ```
 
 2. **Set up API keys:**
 
